@@ -1,0 +1,18 @@
+# version: "3.1"
+# stories:
+#   - story: demo 1 — greet → purpose
+#     steps:
+#       - intent: greet
+#       - action: utter_greet
+#       - intent: purpose_iso
+#       - action: utter_purpose_iso
+
+#   - story: demo 2 — tek soru (EnMS)
+#     steps:
+#       - intent: what_is_enms
+#       - action: utter_what_is_enms
+
+#   - story: demo 3 — kapanış
+#     steps:
+#       - intent: goodbye
+#       - action: utter_goodbye

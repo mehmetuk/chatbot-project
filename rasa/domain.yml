@@ -1,0 +1,104 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - thanks
+  - purpose_iso
+  - what_is_enms
+  - what_is_energy_performance
+  - what_is_energy_review
+  - what_is_energy_baseline
+  - what_is_enpi
+  - energy_policy_requirement
+  - scope_iso
+
+responses:
+  # genel konuşma
+  utter_greet:
+    - text: "Hello! How can I help you today?"
+
+  utter_goodbye:
+    - text: "Goodbye! Feel free to ask more questions if you need help."
+
+  utter_thanks:
+    - text: "You're welcome!"
+
+  # 1) Purpose of ISO 50001
+  utter_purpose_iso:
+    - text: |
+        The purpose of this International Standard is to enable organizations to establish the systems
+        and processes necessary to improve energy performance, including energy efficiency, use and
+        consumption. Implementation of this International Standard is intended to lead to reductions
+        in greenhouse gas emissions and other related environmental impacts and energy cost through
+        systematic management of energy. This International Standard is applicable to all types and sizes
+        of organizations, irrespective of geographical, cultural or social conditions. Successful implementation
+        depends on commitment from all levels and functions of the organization, and especially from top management.
+
+  # 2) What is EnMS?
+  utter_what_is_enms:
+    - text: |
+        energy management system
+        EnMS
+        set of interrelated or interacting elements to establish an energy policy and energy objectives, and processes
+        and procedures to achieve those objectives
+
+  # 3) Energy performance
+  utter_what_is_energy_performance:
+    - text: |
+        energy performance
+        measurable results related to energy efficiency (3.8), energy use (3.18) and energy consumption (3.7)
+        NOTE 1 In the context of energy management systems, results can be measured against the organization's energy
+        policy, objectives, targets and other energy performance requirements.
+        NOTE 2 Energy performance is one component of the performance of the energy management system.
+
+  # 4) Energy review
+  utter_what_is_energy_review:
+    - text: |
+        energy review
+        determination of the organization's energy performance based on data and other information, leading to
+        identification of opportunities for improvement
+
+  # 5) Energy baseline
+  utter_what_is_energy_baseline:
+    - text: |
+        energy baseline
+        quantitative reference(s) providing a basis for comparison of energy performance
+        NOTE 1 An energy baseline reflects a specified period of time.
+        NOTE 2 An energy baseline can be normalized using variables which affect energy use and/or consumption,
+        e.g. production level, degree days (outdoor temperature), etc.
+        NOTE 3 The energy baseline is also used for calculation of energy savings, as a reference before and after
+        implementation of energy performance improvement actions.
+
+  # 6) EnPI
+  utter_what_is_enpi:
+    - text: |
+        energy performance indicator
+        EnPI
+        quantitative value or measure of energy performance, as defined by the organization
+        NOTE EnPIs could be expressed as a simple metric, ratio or a more complex model.
+
+  # 7) Energy policy requirement
+  utter_energy_policy_requirement:
+    - text: |
+        The energy policy shall state the organization's commitment to achieving energy performance improvement.
+        Top management shall define the energy policy and ensure that it:
+        a) is appropriate to the nature and scale of the organization's energy use and consumption;
+        b) includes a commitment to continual improvement in energy performance;
+        c) includes a commitment to ensure the availability of information and of necessary resources to achieve
+        objectives and targets;
+        d) includes a commitment to comply with applicable legal requirements and other requirements to which the
+        organization subscribes related to its energy use, consumption and efficiency;
+        e) provides the framework for setting and reviewing energy objectives and targets;
+        f) supports the purchase of energy-efficient products and services, and design for energy performance
+        improvement;
+        g) is documented and communicated at all levels within the organization;
+        h) is regularly reviewed, and updated as necessary.
+
+  # 8) Scope (term)
+  utter_scope_iso:
+    - text: |
+        scope
+        extent of activities, facilities and decisions that the organization addresses through an EnMS, which can
+        include several boundaries
+        NOTE The scope can include energy related to transport.

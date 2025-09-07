@@ -1,0 +1,59 @@
+version: "3.1"
+
+rules:
+  # ---- genel konuşma ----
+  - rule: Say hello
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Say goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Say thanks
+    steps:
+      - intent: thanks
+      - action: utter_thanks
+
+  # ---- ISO 50001  ----
+  - rule: Purpose of ISO 50001
+    steps:
+      - intent: purpose_iso
+      - action: utter_purpose_iso
+
+  - rule: What is EnMS
+    steps:
+      - intent: what_is_enms
+      - action: utter_what_is_enms
+
+  - rule: What is energy performance
+    steps:
+      - intent: what_is_energy_performance
+      - action: utter_what_is_energy_performance
+
+  - rule: What is energy review
+    steps:
+      - intent: what_is_energy_review
+      - action: utter_what_is_energy_review
+
+  - rule: What is energy baseline
+    steps:
+      - intent: what_is_energy_baseline
+      - action: utter_what_is_energy_baseline
+
+  - rule: What is EnPI
+    steps:
+      - intent: what_is_enpi
+      - action: utter_what_is_enpi
+
+  - rule: Energy policy requirement
+    steps:
+      - intent: energy_policy_requirement
+      - action: utter_energy_policy_requirement
+
+  - rule: Scope of ISO 50001
+    steps:
+      - intent: scope_iso
+      - action: utter_scope_iso

@@ -1,0 +1,88 @@
+version: "3.1"
+
+nlu:
+  # --- Genel konuşma ---
+  - intent: greet
+    examples: |
+      - hi
+      - hello
+      - hey
+      - good morning
+      - good afternoon
+      - selam
+      - merhaba
+
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - see you later
+      - have a nice day
+      - görüşürüz
+      - hoşça kal
+
+  - intent: thanks
+    examples: |
+      - thank you
+      - thanks
+      - thanks a lot
+      - appreciate it
+      - teşekkür ederim
+      - sağ ol
+
+  # --- ISO 50001 pdf'i  ---
+  - intent: purpose_iso
+    examples: |
+      - What is the purpose of ISO 50001?
+      - Why was ISO 50001 created?
+      - What is the aim of ISO 50001?
+      - Tell me the purpose of ISO 50001.
+
+  - intent: what_is_enms
+    examples: |
+      - What is EnMS?
+      - What does EnMS mean?
+      - Define energy management system.
+      - What is the definition of EnMS?
+
+  - intent: what_is_energy_performance
+    examples: |
+      - What is energy performance?
+      - Define energy performance.
+      - What does energy performance mean?
+      - Can you explain energy performance?
+
+  - intent: what_is_energy_review
+    examples: |
+      - What is an energy review?
+      - Define energy review.
+      - What does energy review mean?
+      - Tell me about energy review.
+
+  - intent: what_is_energy_baseline
+    examples: |
+      - What is an energy baseline?
+      - Define energy baseline.
+      - What does energy baseline mean?
+      - Can you explain energy baseline?
+
+  - intent: what_is_enpi
+    examples: |
+      - What is an energy performance indicator?
+      - What does EnPI mean?
+      - Define EnPI.
+      - Can you explain energy performance indicator?
+
+  - intent: energy_policy_requirement
+    examples: |
+      - What is the energy policy requirement?
+      - What does energy policy mean in ISO 50001?
+      - Tell me about the energy policy requirement.
+      - Explain energy policy requirement.
+
+  - intent: scope_iso
+    examples: |
+      - What is the scope of ISO 50001?
+      - Define scope in ISO 50001.
+      - What does scope mean in ISO 50001?
+      - Can you explain the scope of ISO 50001?
