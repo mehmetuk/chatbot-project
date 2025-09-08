@@ -86,3 +86,17 @@ nlu:
       - Define scope in ISO 50001.
       - What does scope mean in ISO 50001?
       - Can you explain the scope of ISO 50001?
+
+  # --- Fallback / Anlaşılmayan girişler ---
+  - intent: out_of_scope
+    examples: |
+      - asdfg
+      - qwerty
+      - blabla
+      - nonsense input
+      - bilmiyorum
+      - saçma yazı
+      - 123456
+      - anlamadım
+      - saçma soru
+      - deneme mesajı

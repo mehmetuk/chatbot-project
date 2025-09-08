@@ -57,3 +57,8 @@ rules:
     steps:
       - intent: scope_iso
       - action: utter_scope_iso
+
+  - rule: Handle out of scope
+    steps:
+      - intent: out_of_scope
+      - action: utter_fallback

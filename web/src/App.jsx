@@ -1,12 +1,18 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './App.css';
-import ChatbotLogo from './assets/chatbot-logo.png'; // Logoyu buraya aktarıyoruz
+import ChatbotLogo from './assets/chatbot-logo.png';
 
 function App() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
+  const messagesEndRef = useRef(null); // 👈 referans noktası
 
- const sendMessage = async () => {
+  // Yeni mesaj eklendikçe scroll en alta insin
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
+  const sendMessage = async () => {
     if (input.trim() === '') return;
 
     const userMessage = { text: input, sender: 'user' };
@@ -14,27 +20,25 @@ function App() {
     setInput('');
 
     try {
-        // Mesajı Rasa sunucusuna gönder
-        const response = await fetch('http://localhost:5005/webhooks/rest/webhook', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ sender: 'user', message: input }),
-        });
+      const response = await fetch('http://localhost:5005/webhooks/rest/webhook', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sender: 'user', message: input }),
+      });
 
-        const data = await response.json();
+      const data = await response.json();
 
-        // Rasa'dan gelen yanıtları ekle
-        data.forEach((botMessage) => {
-            const botResponse = { text: botMessage.text, sender: 'bot' };
-            setMessages((prevMessages) => [...prevMessages, botResponse]);
-        });
+      data.forEach((botMessage) => {
+        const botResponse = { text: botMessage.text, sender: 'bot' };
+        setMessages((prevMessages) => [...prevMessages, botResponse]);
+      });
 
     } catch (error) {
-        console.error('Error sending message to Rasa:', error);
-        const errorMessage = { text: 'Sorry, I am currently unavailable.', sender: 'bot' };
-        setMessages((prevMessages) => [...prevMessages, errorMessage]);
+      console.error('Error sending message to Rasa:', error);
+      const errorMessage = { text: 'Sorry, I am currently unavailable.', sender: 'bot' };
+      setMessages((prevMessages) => [...prevMessages, errorMessage]);
     }
-};
+  };
 
   return (
     <div className="chatbot-wrapper">
@@ -55,6 +59,8 @@ function App() {
             </div>
           </div>
         ))}
+        {/* 👇 burası scroll hedefi */}
+        <div ref={messagesEndRef} />
       </div>
 
       <div className="chat-input-area">

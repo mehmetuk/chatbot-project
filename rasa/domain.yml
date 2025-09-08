@@ -12,6 +12,7 @@ intents:
   - what_is_enpi
   - energy_policy_requirement
   - scope_iso
+  - out_of_scope
 
 responses:
   # genel konuşma
@@ -102,3 +103,7 @@ responses:
         extent of activities, facilities and decisions that the organization addresses through an EnMS, which can
         include several boundaries
         NOTE The scope can include energy related to transport.
+
+  utter_fallback:
+    - text: "Sorry, I didn’t quite get that. Can you rephrase?"
+    - text: "I’m not sure I understood. Could you ask in another way?"
