@@ -5,9 +5,9 @@ import ChatbotLogo from './assets/chatbot-logo.png';
 function App() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
-  const messagesEndRef = useRef(null); // 👈 referans noktası
+  const messagesEndRef = useRef(null); //  referans noktası
 
-  // Yeni mesaj eklendikçe scroll en alta insin
+  // Yeni mesaj eklendikçe scroll en alta inecek
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
@@ -59,7 +59,7 @@ function App() {
             </div>
           </div>
         ))}
-        {/* 👇 burası scroll hedefi */}
+        {/* scroll*/}
         <div ref={messagesEndRef} />
       </div>
 
